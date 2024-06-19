@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: e91cl5kep-java-quarkus-gitops
+  description: This is GitOps manifest for e91cl5kep-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: e91cl5kep-java-quarkus
+    janus-idp.io/tekton: e91cl5kep-java-quarkus 
+    backstage.io/kubernetes-id: e91cl5kep-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:e91cl5kep-java-quarkus
